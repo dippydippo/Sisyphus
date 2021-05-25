@@ -1,4 +1,4 @@
-const { MessageEmbed, Message } = require('discord.js');
+const { MessageEmbed } = require('discord.js');
 
 exports.config = {
 	path: __filename,
