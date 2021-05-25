@@ -9,7 +9,7 @@ module.exports = (client, message) => {
 
 	const cmd = client.commands.get(command) || client.commands.find(comm => comm.config.aliases && comm.config.aliases.includes(command));
 
-	if (!cmd) return message.reply(`\`${command}\` is not a valid command.`);
+	if (!cmd) return;
 
 	assigndef(client, cmd);
 
