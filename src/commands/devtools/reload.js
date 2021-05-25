@@ -1,24 +1,30 @@
-const fs = require('fs');
+const path = require('path');
 
 exports.config = {
+	path: __filename,
 	aliases: ['rl'],
 	ownerOnly: true,
 	minArgs: 1,
+};
+exports.info = {
+	name: 'Reload command',
+	description: 'Reloads a command to apply changes, only usable by devs',
+	category: 'Devtools',
+	usage: '',
 };
 exports.run = (client, message, args) => {
 
 	const commandName = args[0].toLowerCase();
 	const newcmd = client.commands.get(commandName) || client.commands.find(comm => comm.config.aliases && comm.config.aliases.includes(commandName));
+	const cmdPath = newcmd.config.path;
 
 	if (!newcmd) return message.reply(`Command with name or alias ${commandName} doesn't exist.`);
 
-	const folderName = fs.readdirSync('./src/commands').find(folder => fs.readdirSync(`./src/commands/${folder}`).includes(`${commandName}.js`));
-
-	delete require.cache[require.resolve(`../${folderName}/${commandName}`)];
+	delete require.cache[require.resolve(cmdPath)];
 
 	try {
-		const newCommand = require(`../${folderName}/${commandName}`);
-		client.commands.set(commandName, newCommand);
+		const newCommand = require(cmdPath);
+		client.commands.set(path.basename(cmdPath), newCommand);
 		message.reply(`Command ${commandName} was successfully reloaded`);
 	}
 	catch (error) {

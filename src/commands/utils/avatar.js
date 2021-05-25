@@ -2,13 +2,14 @@ const getid = require('../../structure/functions/getid');
 const { MessageEmbed } = require('discord.js');
 
 exports.config = {
+	path: __filename,
 	aliases: ['pfp', 'av'],
 };
 
 exports.info = {
-	name: 'Something',
-	description: 'Get users avatar',
-	category: 'Utility',
+	name: 'Avatar',
+	description: 'Get users avatar.',
+	category: 'Utilities',
 	usage: '<user mention>',
 };
 

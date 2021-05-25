@@ -4,12 +4,13 @@ const { MessageEmbed } = require('discord.js');
 
 exports.info = {
 	name: 'hug',
-	category: 'fun',
+	category: 'Fun',
 	description: 'Give somebody a good old hug.',
 	usage: '<user mention>',
 };
 
 exports.config = {
+	path: __filename,
 	minArgs: 1,
 };
 

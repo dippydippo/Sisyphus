@@ -1,13 +1,17 @@
 const fs = require('fs');
 
 exports.config = {
+	devname: __filename,
 	aliases: ['lc', 'load'],
 	ownerOnly: true,
 	minArgs: 1,
 };
 
 exports.info = {
-
+	name: 'Load Command',
+	category: 'Devtools',
+	description: 'Loads a command, only usable by devs',
+	usage: '<command name>',
 };
 
 exports.run = (client, message, args) => {

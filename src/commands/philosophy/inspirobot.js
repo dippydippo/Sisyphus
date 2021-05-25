@@ -3,11 +3,12 @@ const titles = require('../../structure/data/inspirobotquotes.json');
 const { MessageEmbed } = require('discord.js');
 
 exports.config = {
+	path: __filename,
 	aliases: ['inspire'],
 };
 exports.info = {
 	name: 'Inspirobot Quote',
-	category: 'philosophy',
+	category: 'Philosophy',
 	description: 'Get a random inspirobot quote.',
 	usage: '',
 };

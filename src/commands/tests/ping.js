@@ -1,4 +1,5 @@
 exports.config = {
+	path: __filename,
 	aliases: ['test'],
 	ownerOnly: true,
 	guildOnly: true,

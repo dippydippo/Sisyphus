@@ -2,11 +2,11 @@ const get = require('../../structure/functions/getapi');
 const { MessageEmbed } = require('discord.js');
 
 exports.config = {
-
+	path: __filename,
 };
 exports.info = {
 	name: 'Animal',
-	category: 'fun',
+	category: 'Fun',
 	description: 'Gives you a random image of an animal of your own choosing!',
 	usage: '[animal]',
 };

@@ -10,6 +10,7 @@ exports.info = {
 };
 
 exports.config = {
+	path: __filename,
 	minArgs: 1,
 };
 

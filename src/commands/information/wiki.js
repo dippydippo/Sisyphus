@@ -2,7 +2,14 @@ const { MessageEmbed } = require('discord.js');
 const wiki = require('wikijs').default;
 
 exports.config = {
+	path: __filename,
 	aliases: ['search'],
+};
+exports.info = {
+	name: 'Wiki',
+	description: 'Searches Wikipedia for you and returns the results.',
+	category: 'Information',
+	usage: '[query]',
 };
 exports.run = async (client, message, args, text) => {
 	let data = {};

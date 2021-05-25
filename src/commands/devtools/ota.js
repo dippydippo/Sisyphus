@@ -1,9 +1,10 @@
 exports.config = {
+	path: __filename,
 	ownerOnly: true,
 };
 exports.info = {
 	name: 'Ota',
-	category: 'tests',
+	category: 'Devtools',
 	description: '--',
 	usage: '',
 };

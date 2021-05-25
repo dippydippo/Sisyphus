@@ -1,13 +1,14 @@
 const get = require('../../structure/functions/getapi');
 
 exports.config = {
-	aliases: ['fact', 'owo'],
+	aliases: ['fact'],
+	path: __filename,
 };
 exports.info = {
 	name: 'Animal fact',
 	category: 'Fun',
 	description: 'Gives you a random animal fact!',
-	usage: '<animal>',
+	usage: '[animal]',
 };
 exports.run = async (client, message, args) => {
 	const animals = ['cat', 'dog', 'panda', 'bird', 'fox', 'koala'];

@@ -1,5 +1,12 @@
 exports.config = {
+	path: __filename,
 	ownerOnly: true,
+};
+exports.info = {
+	name: 'Set Avatar',
+	description: 'Sets the bot avatar, only usable by devs',
+	category: 'Devtools',
+	usage: '',
 };
 exports.run = (client, message) => {
 	try {
